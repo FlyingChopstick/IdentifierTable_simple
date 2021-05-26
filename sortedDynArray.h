@@ -70,30 +70,41 @@ public:
         }
         int indexOf(T* element)
         {
-                int start = 0;
-                int end = (valueCount);
-
-                while (start < end)
+            for (unsigned int i = 0; i < valueCount; i++)
+            {
+                compares++;
+                if (values[i] == *element)
                 {
-                        int middle = (start + end) / 2;
-
-                        compares++;
-                        if (*element == values[middle])
-                        {
-                                return middle;
-                        }
-                        compares++;
-                        if (*element < values[middle])
-                        {
-                                end = middle;
-                        }
-                        else
-                        {
-                                start = middle + 1;
-                        }
+                    return i;
                 }
+            }
 
-                return -1;
+            return -1;
+
+//                int start = 0;
+//                int end = (valueCount);
+
+//                while (start < end)
+//                {
+//                        int middle = (start + end) / 2;
+
+//                        compares++;
+//                        if (*element == values[middle])
+//                        {
+//                                return middle;
+//                        }
+//                        compares++;
+//                        if (*element < values[middle])
+//                        {
+//                                end = middle;
+//                        }
+//                        else
+//                        {
+//                                start = middle + 1;
+//                        }
+//                }
+
+//                return -1;
         }
 
         unsigned int size() { return valueCount; }

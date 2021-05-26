@@ -137,7 +137,7 @@ bool MainWindow::QueryIdentifier(QString identifier)
     //if results are different, smth is wrong, throw
     if (ht_res != sl_res)
     {
-        throw;
+        return false; //throw;
     }
 
     //return result
